@@ -23,7 +23,7 @@ const char* ssid = "<Your WiFi SSID>";
 const char* password = "<Your WiFi Password>";
 
 //external web server address
-const char* server = "http://menrva.online/apps/gps.php";
+const char* server = "http://<your-server-domain>/gps.php";
 
 //WebServer server(80);
 
