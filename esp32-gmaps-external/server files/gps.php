@@ -1,8 +1,12 @@
 <?php
-    if(isset($_POST['lat']) && isset($_POST['lng'])){
+    $inp = file_get_contents("php://input");
+    if(!empty($inp)){
+        $s = explode("&",$inp);
+        $a = explode("=",$s[0]);
+        $b = explode("=",$s[1]);
         // Replace this with another method that saves to DB
         $file = fopen("gps_data.txt", "w") or die("Unable to open file!");
-        $txt = $_POST['lat'] . "," . $_POST['lng'];
+        $txt = $a[1] . "," . $b[1];
         fwrite($file, $txt);
         fclose($file);
     }else{
@@ -11,6 +15,4 @@
         echo fread($file,filesize("gps_data.txt"));
         fclose($file); 
     }
-
-
 ?>
