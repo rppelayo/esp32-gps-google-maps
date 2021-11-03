@@ -14,7 +14,7 @@ function getPosition(){
       lat = parseFloat(vals[0]);
       lng = parseFloat(vals[1]);
 
-      if(isNaN(lat) || isNaN(lng)){
+      if(!isNaN(lat) || !isNaN(lng)){
           changeMarkerPosition();
       }else{ return; }
     },"text");
